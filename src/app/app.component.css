@@ -9,9 +9,10 @@ label {
 form {
   width: 70%;
   margin-left: 5%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 10px;
   background-color: aquamarine;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 input[type='text'],
