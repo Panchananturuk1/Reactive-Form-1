@@ -10,16 +10,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class AppComponent {
   name = 'Angular';
 
-
-
   userData = new FormGroup({
     fullname: new FormControl('', [Validators.required]),
     username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
     confpassword: new FormControl('', [Validators.required]),
+    terms: new FormControl('', [Validators.required]),
   });
-
-
-
 }

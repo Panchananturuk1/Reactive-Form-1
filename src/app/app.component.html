@@ -69,8 +69,18 @@
 
   <br />
 
-  <input type="checkbox" />I have read and agreed to the Terms <br />
-  <a href="#">Accept Terms is required</a> <br />
+  <input type="checkbox" formControlName="terms" name="terms" />I have read and
+  agreed to the Terms <br />
+
+  <div
+    *ngIf="
+      userData.controls['terms'].errors && userData.controls['terms'].touched
+    "
+  >
+    <span *ngIf="userData.controls['terms'].errors.required"
+      >Accept Terms is Required</span
+    >
+  </div>
 
   <input class="btn btn-primary" type="submit" [disabled]="!formdemo.valid" />
   <input type="reset" class="btn btn-warning" style="float:right" />
