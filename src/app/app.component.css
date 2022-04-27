@@ -2,6 +2,33 @@ p {
   font-family: Lato;
 }
 
+label {
+  font-size: large;
+}
+
+form {
+  width: 70%;
+  margin-left: 5%;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+input[type='text'],
+[type='email'],
+[type='password'] {
+  padding: 8px;
+  margin: 10px 0px 15px 0px;
+  border-radius: 5px;
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+a {
+  text-decoration: none;
+}
+
 span {
   color: red;
 }
