@@ -33,7 +33,7 @@
         }
 </style>
 
-<form action="" [formGroup]="userData">
+<form action="" [formGroup]="userData" #formdemo="ngForm">
   <label for="fullname">Fullname</label>
   <input type="text" name="fullname" formControlName="fullname" />
 
@@ -44,23 +44,68 @@
     "
   >
     <span *ngIf="userData.controls['fullname'].errors.required"
-      >fullname is required</span
+      >Fullname is required</span
     >
   </div>
 
   <label for="username">Username</label>
   <input type="text" name="username" formControlName="username" />
+  <div
+    *ngIf="
+      userData.controls['username'].errors &&
+      userData.controls['username'].touched
+    "
+  >
+    <span *ngIf="userData.controls['username'].errors.required"
+      >username Required</span
+    >
+  </div>
   <label for="email">Email</label>
   <input type="email" name="email" formControlName="email" />
+
+  <div
+    *ngIf="
+      userData.controls['email'].errors && userData.controls['email'].touched
+    "
+  >
+    <span *ngIf="userData.controls['email'].errors.required"
+      >username Required</span
+    >
+  </div>
+
   <label for="password">Password</label>
   <input type="password" name="password" formControlName="password" />
+
+  <div
+  *ngIf="
+    userData.controls['password'].errors &&
+    userData.controls['password'].touched
+  "
+>
+  <span *ngIf="userData.controls['password'].errors.required"
+    >Confirm Password is Required</span
+  >
+  </div>
+
   <label for="confpassword">Confirm Password</label>
   <input type="password" name="confpassword" formControlName="confpassword" />
+
+  <div
+  *ngIf="
+    userData.controls['confpassword'].errors &&
+    userData.controls['confpassword'].touched
+  "
+>
+  <span *ngIf="userData.controls['confpassword'].errors.required"
+    >Confirm Password is Required</span
+  >
+  </div>
+
   <br />
 
   <input type="checkbox" />I have read and agreed to the Terms <br />
   <a href="#">Accept Terms is required</a> <br />
 
-  <input class="btn btn-primary" type="submit" />
+  <input class="btn btn-primary" type="submit" [disabled]="!formdemo.valid" />
   <input type="reset" class="btn btn-warning" style="float:right" />
 </form>
