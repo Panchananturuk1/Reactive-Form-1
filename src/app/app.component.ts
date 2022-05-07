@@ -18,4 +18,10 @@ export class AppComponent {
     confpassword: new FormControl('', [Validators.required]),
     terms: new FormControl('', [Validators.required]),
   });
+
+  // displayVal: string = '';
+  getVal(val: string) {
+    console.warn(val);
+    // this.displayVal = val;
+  }
 }
