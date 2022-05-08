@@ -19,9 +19,9 @@ export class AppComponent {
     terms: new FormControl('', [Validators.required]),
   });
 
-  // displayVal: string = '';
+  displayVal: string = '';
   getVal(val: string) {
     console.warn(val);
-    // this.displayVal = val;
+    this.displayVal = val;
   }
 }
